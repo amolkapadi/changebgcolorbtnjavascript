@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>JavaScript Color Changing App</title>
+</head>
+<style>
+    #main {
+        text-align: center;
+        color: white;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: tomato;
+        padding: 20px;
+    }
+
+    #button {
+        text-align: center;
+        width: 200px;
+        height: 50px;
+        margin: 50px auto 50px;
+        color: black;
+        background: white;
+        border-radius: 5px;
+        border-style: none;
+        display: block;
+    }
+</style>
+
+<body>
+    <div id="main">
+        My background color will change when my button below is clicked.
+        <button id="button">Click me!</button>
+    </div>
+
+
+
+
+
+    <script>
+        let colors = ['red', 'blue', 'green', 'orange', 'purple', 'black'];
+
+
+
+        //change the background of canvas when button is clicked
+        let button = document.getElementById('button');
+
+        button.addEventListener('click', function () {
+            //select a random number between 0 - 6
+            let index = parseInt((Math.random() * colors.length) + 1);
+            //grab the canvas
+            let canvas = document.getElementById('main');
+
+            canvas.style.background = `${colors[index]}`
+        })
+    </script>
+</body>
+
+</html>
